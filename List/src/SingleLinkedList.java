@@ -108,6 +108,10 @@ public class SingleLinkedList<E>
             head = new Node<E>(item,after);
             size++;
         }
+        else if (index == size-1){
+            getNode(index).next = new Node<>(item,null);
+            size++;
+        }
         else{
             Node<E> before = getNode(index-1);
             Node<E> after = getNode(index);
