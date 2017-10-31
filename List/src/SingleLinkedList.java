@@ -103,7 +103,10 @@ public class SingleLinkedList<E>
      */
     public void add(int index, E item) {
 
-        if (index == 0){
+        if (index == 0 &&  head == null){
+            addFirst(item);
+        }
+        else if (index == 0){
             Node<E> after = getNode(index);
             head = new Node<E>(item,after);
             size++;
